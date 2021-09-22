@@ -1,6 +1,6 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { registerCustomer } from '../app/api';
-import { Redirect, useHistory } from "react-router";
+import { useHistory } from "react-router";
 
 export const RegisterForm = (props) => {
   const history = useHistory();

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router";
+import { Redirect } from "react-router";
 
 
 // Styles
@@ -26,12 +26,11 @@ import { Store } from "./section/Store";
 
 function App() {
   const dispatch = useDispatch();
-  const history = useHistory();
   const [selected, setSelected] = useState('Products');
   const loggedIn = useSelector(state => state.token.loggedIn);
   const logout = () => {
     dispatch({type: 'LOGOUT'});
-    history.push('/');
+    return <Redirect to='/'/>;
   };
   return (
     <div className = "app">
@@ -49,16 +48,16 @@ function App() {
         </Container>
       </Navbar>
       <Switch>
-        <Route path="/login">
+        <Route exact path="/login">
           <LoginForm />
         </Route>
-        <Route path="/register">
+        <Route exact path="/register">
           <RegisterForm />
         </Route>
-        <Route path="/products">
+        <Route exact path="/products">
           <Store />
         </Route>
-        <Route path="/admin">
+        <Route exact path="/admin">
           <Container>
             <Header tabs = {['Products', 'Orders', 'Customers', 'Supplies']} selected = {selected} setSelected = {(tab) => setSelected(tab)}>
               <Tab isSelected = {selected === 'Products'}>

@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const apiURL = process.env.REACT_APP_REQRES_API;
 
+const apiEndPoint = process.env.REACT_APP_API_URL;
 
 
 
 
 function authorizeCustomer(email, password) {
-  const response = axios.post(`http://localhost:3001/api/login`, {
+  const response = axios.post(`${apiEndPoint}/login`, {
     email,
     password
   });
@@ -15,7 +15,7 @@ function authorizeCustomer(email, password) {
 }
 
 function registerCustomer(username, email, password, address) {
-  const response = axios.post(`http://localhost:3001/api/register`, {
+  const response = axios.post(`${apiEndPoint}/register`, {
     username,
     email,
     password,
@@ -29,12 +29,12 @@ function registerCustomer(username, email, password, address) {
 
 
 function getCustomers() {
-  const response = axios.get(`http://localhost:3001/api/customer`);
+  const response = axios.get(`${apiEndPoint}/customer`);
   return response;
 }
 
 function getCreatedCustomer({ username, email, address }) {
-  const response = axios.post(`http://localhost:3001/api/customer`, {
+  const response = axios.post(`${apiEndPoint}/customer`, {
     username,
     email,
     password: '12345678',
@@ -44,7 +44,7 @@ function getCreatedCustomer({ username, email, address }) {
 }
 
 function getUpdatedCustomer(id, customer) {
-  const response = axios.put(`http://localhost:3001/api/customer/${id}`, {
+  const response = axios.put(`${apiEndPoint}/customer/${id}`, {
     id: customer.id,
     username: customer.username,
     email: customer.email,
@@ -55,7 +55,7 @@ function getUpdatedCustomer(id, customer) {
 }
 
 function getDeletedCustomer(id) {
-  const response = axios.delete(`http://localhost:3001/api/customer/${id}`);
+  const response = axios.delete(`${apiEndPoint}/customer/${id}`);
   return response;
 }
 
@@ -73,12 +73,12 @@ function getDeletedCustomer(id) {
 
 
 function getProducts() {
-  const response = axios.get(`http://localhost:3001/api/product`);
+  const response = axios.get(`${apiEndPoint}/product`);
   return response;
 }
 
 function getCreatedProduct({ name, image, price, description }) {
-  const response = axios.post(`http://localhost:3001/api/product`, {
+  const response = axios.post(`${apiEndPoint}/product`, {
     name,
     image,
     price,
@@ -88,7 +88,7 @@ function getCreatedProduct({ name, image, price, description }) {
 }
 
 function getUpdatedProduct(id, product) {
-  const response = axios.put(`http://localhost:3001/api/product/${id}`, {
+  const response = axios.put(`${apiEndPoint}/product/${id}`, {
     id: product.id,
     name: product.name,
     image: product.image,
@@ -99,7 +99,7 @@ function getUpdatedProduct(id, product) {
 }
 
 function getDeletedProduct(id) {
-  const response = axios.delete(`http://localhost:3001/api/product/${id}`);
+  const response = axios.delete(`${apiEndPoint}/product/${id}`);
   return response;
 }
 
@@ -117,12 +117,12 @@ function getDeletedProduct(id) {
 
 
 function getOrders() {
-  const response = axios.get(`http://localhost:3001/api/order`);
+  const response = axios.get(`${apiEndPoint}/order`);
   return response;
 }
 
 function getCreatedOrder({ customerId, productId, quantity }) {
-  const response = axios.post(`http://localhost:3001/api/order`, {
+  const response = axios.post(`${apiEndPoint}/order`, {
     customerId,
     productId,
     quantity
@@ -131,7 +131,7 @@ function getCreatedOrder({ customerId, productId, quantity }) {
 }
 
 function getUpdatedOrder(id, order) {
-  const response = axios.put(`http://localhost:3001/api/order/${id}`, {
+  const response = axios.put(`${apiEndPoint}/order/${id}`, {
     id: order.id,
     cutomerId: order.customerId,
     productId: order.productId,
@@ -141,7 +141,7 @@ function getUpdatedOrder(id, order) {
 }
 
 function getDeletedOrder(id) {
-  const response = axios.delete(`http://localhost:3001/api/order/${id}`);
+  const response = axios.delete(`${apiEndPoint}/order/${id}`);
   return response;
 }
 
@@ -154,12 +154,12 @@ function getDeletedOrder(id) {
 
 
 function getSuppliers() {
-  const response = axios.get(`http://localhost:3001/api/supplies`);
+  const response = axios.get(`${apiEndPoint}/supplies`);
   return response;
 }
 
 function getCreatedSupplier({ username, email }) {
-  const response = axios.post(`http://localhost:3001/api/supplies`, {
+  const response = axios.post(`${apiEndPoint}/supplies`, {
     username,
     email,
   });
@@ -167,7 +167,7 @@ function getCreatedSupplier({ username, email }) {
 }
 
 function getUpdatedSupplier(id, supplier) {
-  const response = axios.put(`http://localhost:3001/api/supplies/${id}`, {
+  const response = axios.put(`${apiEndPoint}/supplies/${id}`, {
     id: supplier.id,
     username: supplier.username,
     email: supplier.email,
@@ -176,7 +176,7 @@ function getUpdatedSupplier(id, supplier) {
 }
 
 function getDeletedSupplier(id) {
-  const response = axios.delete(`http://localhost:3001/api/supplies/${id}`);
+  const response = axios.delete(`${apiEndPoint}/supplies/${id}`);
   return response;
 }
 

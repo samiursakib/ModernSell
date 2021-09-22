@@ -10,7 +10,7 @@ export const DeleteCustomer = ({ currentCustomer, deleteCustomer, setActiveModal
 
   useEffect(() => {
     setCustomer(currentCustomer);
-  }, [customer]);
+  }, [currentCustomer]);
 
   return (
     <form
@@ -59,7 +59,7 @@ export const DeleteProduct = ({ currentProduct, deleteProduct, setActiveModal })
 
   useEffect(() => {
     setProduct(currentProduct);
-  }, [product]);
+  }, [currentProduct]);
 
   return (
     <form
@@ -103,7 +103,7 @@ export const DeleteOrder = ({ currentOrder, deleteOrder, setActiveModal }) => {
 
   useEffect(() => {
     setOrder(currentOrder);
-  }, [order]);
+  }, [currentOrder]);
 
   return (
     <form
@@ -146,7 +146,7 @@ export const DeleteSupplier = ({ currentSupplier, deleteSupplier, setActiveModal
 
   useEffect(() => {
     setSupplier(currentSupplier);
-  }, [supplier]);
+  }, [currentSupplier]);
 
   return (
     <form

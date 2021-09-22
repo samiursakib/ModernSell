@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap';
 
 function importAll(r) {
   let images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  r.keys().map((item, index) => images[item.replace('./', '')] = r(item));
   return images;
 }
 
@@ -22,7 +22,7 @@ export const Store = () => {
    const [orderDetails, setOrderDetails] = useState({
       customerId,
       productId: null,
-      quantity: null
+      quantity: 0
    });
    getProducts()
       .then(res => {
@@ -37,7 +37,7 @@ export const Store = () => {
       <div className='gallery'>
          {loggedIn && products && products.map((item, index) => {
             return (
-               <Card style={{ width: '18rem' }} style={{display: 'iniline-block', maxWidth: 300}}>
+               <Card style={{ width: '18rem', display: 'iniline-block' }} key={index}>
                   <Card.Img variant="top" src={images[item.image]} />
                   <Card.Body>
                      <Card.Title>{item.name}</Card.Title>

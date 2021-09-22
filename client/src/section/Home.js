@@ -1,11 +1,10 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";
 
 import BackgroundImage1 from "../img/slider1.jpg";
 import BackgroundImage2 from "../img/slider2.jpg";
 import BackgroundImage3 from "../img/slider3.jpeg";
 import DEALOFWEEK from "../img/deal_ofthe_week.png";
-import { getProducts } from "../app/api";
 import { ButtonGroup } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { AiFillFacebook } from "react-icons/ai";
@@ -14,36 +13,6 @@ import { MdEmail } from "react-icons/md";
 
 
 export const Home = () => {
-  const [data, setData] = useState(null);
-  const [login, setLogin] = useState(true);
-  const [modal, setModal] = useState(false);
-
-  
-  const showHideModal = () => {
-    setModal(false);
-  };
-
-  const loginClicked = () => {
-    setModal(true);
-    setLogin(true);
-  };
-  const registerClicked = () => {
-    setModal(true);
-    setLogin(false);
-  };
-
-  // addToBag = params => {
-  //   let cart = postCart(params);
-  //   cart.then(res => {
-  //     console.log(res);
-  //   });
-  // };
-
-  useEffect(() => {
-    getProducts()
-      .then(res => setData(res.data))
-      .catch(err => console.log(err));
-  }, []);
 
   return (
     <div>

@@ -5,9 +5,9 @@ import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { tokenReducer, appReducer } from "./store/reducers/reducers";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { appReducer, tokenReducer } from "./store/reducers";
 
 
 const rootReducer = combineReducers({

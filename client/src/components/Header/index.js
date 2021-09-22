@@ -11,7 +11,7 @@ const Header = ({ tabs, selected, setSelected, children }) => {
             const active = tab === selected ? ' active' : '';
             return (
               <li className='nav-item' key={tab} style={{cursor: 'pointer'}}>
-                <a className={'nav-link' + active } onClick={() => setSelected(tab)}>{ tab }</a>
+                <button className={'nav-link' + active } onClick={() => setSelected(tab)}>{ tab }</button>
               </li>
             );
           })

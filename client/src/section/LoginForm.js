@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Redirect, useHistory } from "react-router";
+import { useHistory } from "react-router";
 import { authorizeCustomer } from "../app/api";
 import { useDispatch } from "react-redux";
 
