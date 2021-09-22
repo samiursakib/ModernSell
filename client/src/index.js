@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import Swal from "sweetalert2";

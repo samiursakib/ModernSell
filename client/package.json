@@ -18,7 +18,8 @@
     "serve": "^11.3.2",
     "sweetalert2": "^9.17.1",
     "sweetalert2-react-content": "^3.0.3",
-    "tsutils": "^3.21.0"
+    "tsutils": "^3.21.0",
+    "redux-devtools-extension": "^2.13.9"
   },
   "scripts": {
     "dev": "react-scripts start",
@@ -48,6 +49,5 @@
     "enzyme-adapter-react-16": "^1.15.3",
     "jest-enzyme": "^7.1.2",
     "redux-devtools": "^3.6.1",
-    "redux-devtools-extension": "^2.13.9"
   }
 }
