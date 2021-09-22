@@ -37,21 +37,36 @@ export const Store = () => {
       <div className='gallery'>
          {loggedIn && products && products.map((item, index) => {
             return (
-               <Card style={{ width: '18rem', display: 'iniline-block' }} key={index}>
-                  <Card.Img variant="top" src={images[item.image]} />
-                  <Card.Body>
-                     <Card.Title>{item.name}</Card.Title>
-                     <Card.Text>{item.description}</Card.Text>
-                     <p>{item.price}</p>
+               // <Card style={{ width: '18rem', display: 'iniline-block' }} key={index}>
+               //    <Card.Img variant="top" src={images[item.image]} />
+               //    <Card.Body>
+               //       <Card.Title>{item.name}</Card.Title>
+               //       <Card.Text>{item.description}</Card.Text>
+               //       <p>{item.price}</p>
+               //       <input
+               //          type='number'
+               //          name='quantity'
+               //          value={orderDetails.quantity}
+               //          onChange={handleChange}
+               //          />
+               //       <Button variant="primary" onClick={() => getCreatedOrder(orderDetails)}>Order Now</Button>
+               //    </Card.Body>
+               // </Card>
+               <div className='card'>
+                  <img src={images[item.image]} />
+                  <div className='card-body'>
+                     <h2>{item.title}</h2>
+                     <p>{item.description}</p>
+                     <p>$ {item.price}</p>
                      <input
                         type='number'
                         name='quantity'
                         value={orderDetails.quantity}
                         onChange={handleChange}
-                        />
-                     <Button variant="primary" onClick={() => getCreatedOrder(orderDetails)}>Order Now</Button>
-                  </Card.Body>
-               </Card>
+                     />
+                     <button onClick={() => getCreatedOrder(orderDetails)}>Order Now</button>
+                  </div>
+               </div>
             )}
          )}
       </div>
