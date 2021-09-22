@@ -20,7 +20,6 @@ export const LoginForm = (props) => {
     const { email, password } = state;
     authorizeCustomer(email, password)
       .then(res => {
-        console.log(res.data[0]);
         dispatch({ type: 'LOGIN', data: res.data[0].id});
         if(res.data.length) history.push('/products');
         else {
